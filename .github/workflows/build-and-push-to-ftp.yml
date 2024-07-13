@@ -3,7 +3,7 @@ name: Build and push to FTP
 on:
   push:
     branches:
-      - trunks # TODO: disabled for now
+      - trunk
 
 jobs:
   build-hugo:
