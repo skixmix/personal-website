@@ -6,14 +6,18 @@
 
   <div style="float: right; text-align: right;">
     <div>
-      <a href="mailto:christopherfujino@gmail.com"
-        >christopherfujino@gmail.com</a
-      >
+      {{ $personalEmail := "s.tavoletta@filmsimili.it" }}
+      <a href="mailto:{{ $personalEmail }}">{{ $personalEmail }}</a>
     </div>
-    <div>
-      <a href="https://github.com/christopherfujino" target="_blank"
-        >github.com/christopherfujino</a
-      >
+    <div class="social-icons">
+      {{ range $socialIndex, $socialValue := .Site.Data.socials }}
+        <a
+          href="{{ $socialValue.url }}"
+          target="_blank"
+          title="{{ $socialValue.name }}">
+          <i class="fa {{ $socialValue.faKey }}" aria-hidden="true"></i>
+        </a>
+      {{ end }}
     </div>
   </div>
 
@@ -29,13 +33,13 @@
     {{ if $isFirstJobInList }}
       {{ $isFirstJobInList = false }}
     {{ else }}
-      <hr />
+      <hr style="opacity:0.4" noshade="noshade" />
     {{ end }}
 
     {{ range $jobFileValue }}
       <div class="p" style="display: inline-block;">
         <div>
-          <em class="base16-0D">{{ .company }}</em>
+          <em class="base16-0D">{{ .companyName }}</em>
           <span>&#x21D2;</span>
           <span>{{ .role }}</span>
         </div>
@@ -53,7 +57,9 @@
       </div>
       <span style="clear: both; display: table;"></span>
       <div>
-        {{ .description | safeHTML }}
+        <div style="text-align:justify">
+          {{ .description | safeHTML }}
+        </div>
         <ul>
           {{ range $keypoint_key, $keypoint_value := .keypoints }}
             <li>{{ $keypoint_value }}</li>

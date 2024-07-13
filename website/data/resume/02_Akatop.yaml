@@ -1,0 +1,20 @@
+- companyName: Akatop
+  role: Product Engineer
+  location: Pisa, Italy (On-site)
+  isOngoing: false
+  startDate: 2022-05-01
+  endDate: 2024-02-01
+  description: |
+    As a Product Engineer, I focused on enhancing the company's CDN platform, iSmartFrame
+    <br>
+    iSmartFrame is designed to improve website performance and enhance core web vitals through advanced caching, 
+    optimization algorithms, and network delivery solutions.
+    <br><br>
+    My role involved developing and refining product algorithms, 
+    managing backend infrastructure, and overseeing full-stack development using technologies such as TypeScript, Node.js,
+    Fastify, Express, nginx, Caddy... This ensured the delivery of efficient and scalable solutions across all aspects of 
+    the platform.
+  keypoints:
+    point1: Implementation of advanced caching systems using Redis, Cassandra, Docker, Kubernetes
+    point2: Creation of new features and functionalities, primarily leveraging Node.js / Typescript, Express / Fastify, Vue.js / Angular
+    point3: Strategic decision-making, team leading and architecture design

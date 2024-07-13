@@ -1,0 +1,18 @@
+- companyName: BonusX
+  role: Senior Software Engineer
+  location: Lucca, Italy (Remote)
+  isOngoing: true
+  startDate: 2024-02-05
+  description: |
+    BonusX simplifies access to public and tax benefits. The platform helps users determine eligibility for services like
+    the ISEE Certification and Household Allowances, facilitating online application management with welfare agencies 
+    and tax authorities.
+    <br><br>
+    As a Senior Software Engineer at BonusX, I specialize in frontend development using React. 
+    I also contribute to backend development with Node.js and mobile app development using Flutter, focusing on 
+    maintaining clean code and adhering to best practices across all platforms.
+  keypoints:
+    point1: Front-end development with React
+    point2: Back-end development with Node.js
+    point4: App development with Flutter
+    point3: CI / CD pipelines with GitHub Actions

@@ -1,0 +1,7 @@
+- name: GitHub
+  faKey: fa-github-square
+  url: https://github.com/skixmix
+
+- name: LinkedIn
+  faKey: fa-linkedin-square
+  url: https://www.linkedin.com/in/simonetavoletta/
