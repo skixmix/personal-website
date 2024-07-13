@@ -1,12 +1,12 @@
-name: Hugo-Build
+name: Build and push to FTP
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  # Set the job key. The key is displayed as the job name when a job name is
-  # not provided
   build-hugo:
-    # Name the job
     name: Build static site with Hugo
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
     runs-on: ubuntu-latest
@@ -16,7 +16,6 @@ jobs:
       image: golang:1.21.4-bookworm
 
     steps:
-      # Check out repo
       - name: Check out repo
         uses: actions/checkout@v4.1.1
         with:
@@ -34,25 +33,17 @@ jobs:
       - name: Build site
         # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#custom-shell
         shell: bash -exo pipefail {0}
-        working-directory: ./blog
+        working-directory: ./website
         run: |
           git config --global --add safe.directory '*'
           ../third_party/hugo/hugo
 
-      - name: Push to teach-me-to-code.github.io
-        uses: appleboy/gh-pages-action@v0.0.2
-        if: github.ref == 'refs/heads/master'
-        # https://github.com/appleboy/gh-pages-action/blob/master/action.yml
+      - name: 📂 Sync files on FTP
+        # https://github.com/marketplace/actions/ftp-deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          # Secrets should be configured in GitHub as a repo setting
-          username: ${{ secrets.USERNAME }}
-          # Should be a personal access token
-          password: ${{ secrets.PASSWORD }}
-          remote_url: https://github.com/teach-me-to-code/teach-me-to-code.github.io
-          commit_author: roy_batty
-          commit_author_email: github-action@users.noreply.github.com
-          target_branch: master
-          # Directory of content to sync
-          target_directory: ./
-          # Directory of content to publish
-          pages_directory: blog/public/
+          server: ${{ secrets.ftp_server }}
+          username: ${{secrets.ftp_username}}
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./website/public/ # TODO check
+          server-dir: ./personal_website/
