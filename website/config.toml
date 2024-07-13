@@ -1,39 +1,21 @@
-baseURL = "https://www.christopherfujino.com"
+baseURL = "https://simonetavoletta.it"
 languageCode = "en-us"
-title = "Teach Me To Code"
+title = "Simone Tavoletta"
 # https://gohugo.io/getting-started/configuration/#enablegitinfo
 enableGitInfo = true
 
 [params]
-  homeText = "You just made a Hugo blog from scratch."
-  repo = "https://github.com/christopherfujino/teach-me-to-code"
-  gitMainBranch = "master"
-
-[permalinks]
-  blog = "/:filename/"
-
-[taxonomies]
-  tag = 'tags'
+  homeText = "My Personal Website"
+  repo = "https://github.com/skixmix/personal-website"
+  gitMainBranch = "trunk"
 
 [menu]
   # layouts/partials/nav.html iterates over .Site.Menus.main
   # https://gohugo.io/content-management/menus/#properties-site-configuration
   [[menu.main]]
-    name = "Tags"
-    pageRef = "/tags"
+    name = "Portfolio"
+    pageRef = "/portfolio"
     weight = 2
-  [[menu.main]]
-    name = "Résumé"
-    pageRef = "/resume"
-    weight = 3
-  [[menu.main]]
-    name = "Recommendations"
-    pageRef = "/recommendations"
-    weight = 4
-  [[menu.main]]
-    name = "About"
-    pageRef = "/about"
-    weight = 5
 
 # https://gohugo.io/getting-started/configuration-markup/#highlight
 [markup]

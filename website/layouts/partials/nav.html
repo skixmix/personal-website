@@ -1,8 +1,8 @@
 <nav>
-  <a href="/">Christopher Fujino</a>
+  <a href="/">Simone Tavoletta</a>
   {{ range .Site.Menus.main }}
-    <span>&#xE0B1;</span>
-    {{ $text := print .Name | safeHTML }}
-    <a href="{{ .URL }}">{{ $text }}</a>
+  <span>&#xE0B1;</span>
+  {{ $text := print .Name | safeHTML }}
+  <a href="{{ .URL }}">{{ $text }}</a>
   {{ end }}
 </nav>

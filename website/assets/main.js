@@ -22,23 +22,4 @@ addEventListener("DOMContentLoaded", function () {
     }
     return new Promise((resolve) => setTimeout(resolve, 1));
   });
-
-  /// Vim keybindings
-  (function () {
-    const termInputSpan = document.querySelector("#terminal-input");
-    let buffer = [];
-    window.addEventListener("keydown", function (event) {
-      if (event.key.length === 1 && ((event.key >= "a" && event.key <= "z") || (event.key >= "A" && event.key <= "Z"))) {
-        buffer.push(event.key);
-        termInputSpan.innerText = buffer.join("");
-      } else if (event.key === "Backspace") {
-        if (buffer.length > 0) {
-          buffer.pop();
-          termInputSpan.innerText = buffer.join("");
-        }
-      } else {
-        console.error("don't know what a ", event.key, " is");
-      }
-    });
-  })();
 });

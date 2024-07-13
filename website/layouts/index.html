@@ -1,15 +1,67 @@
 {{ define "main" }}
+  <div style="display: inline-block">
+    <em class="base16-0A">Hi, I'm Simone Tavoletta</em>
+    <div>Senior Software Engineer</div>
+  </div>
 
-<h1>Posts</h1>
-{{ with .Site.GetPage "/posts" }}
-  {{ range .Pages }}
-    <p>
-      <span>{{ .Date.Format "Jan 02 2006" }} - </span>
-      <a href="{{ .RelPermalink }}">
-        <span>{{ .Title }}</span>
-      </a>
-    </p>
+  <div style="float: right; text-align: right;">
+    <div>
+      <a href="mailto:christopherfujino@gmail.com"
+        >christopherfujino@gmail.com</a
+      >
+    </div>
+    <div>
+      <a href="https://github.com/christopherfujino" target="_blank"
+        >github.com/christopherfujino</a
+      >
+    </div>
+  </div>
+
+  <span style="clear: both; display: table;"></span>
+
+  <hr />
+
+  <h1>Experience</h1>
+
+  {{ $isFirstJobInList := true }}
+  {{ range $jobFileKey, $jobFileValue := .Site.Data.resume }}
+
+    {{ if $isFirstJobInList }}
+      {{ $isFirstJobInList = false }}
+    {{ else }}
+      <hr />
+    {{ end }}
+
+    {{ range $jobFileValue }}
+      <div class="p" style="display: inline-block;">
+        <div>
+          <em class="base16-0D">{{ .company }}</em>
+          <span>&#x21D2;</span>
+          <span>{{ .role }}</span>
+        </div>
+        <div class="base16-03">{{ .location }}</div>
+      </div>
+      <div style="float: right;">
+        <div class="base16-0B">
+          {{ partial "getFormattedDate.html" .startDate }} -
+          {{ if .isOngoing }}
+            present
+          {{ else }}
+            {{ partial "getFormattedDate.html" .endDate }}
+          {{ end }}
+        </div>
+      </div>
+      <span style="clear: both; display: table;"></span>
+      <div>
+        {{ .description | safeHTML }}
+        <ul>
+          {{ range $keypoint_key, $keypoint_value := .keypoints }}
+            <li>{{ $keypoint_value }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+
   {{ end }}
-{{ end }}
 
 {{ end }}

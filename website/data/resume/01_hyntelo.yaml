@@ -1,0 +1,16 @@
+- companyName: Hyntelo SRL
+  role: Solutions Engineer
+  location: Pisa, Italy (Hybrid)
+  isOngoing: false
+  startDate: 2018-12-01
+  endDate: 2022-05-01
+  description: |
+    As a solution engineer at Hyntelo, I worked on various projects ranging from data science to full-stack website 
+    development. This role allowed me to manage and support cross-functional teams in bringing complex applications
+    to life. At the beginning of each project, I set up pipelines, workflows, and the entire infrastructure that 
+    served as the foundation for the application.
+  keypoints:
+    point1: Development of web-centric applications, with Node.js, Angular, Flask
+    point2: Microservices implementation using Docker, Kubernetes
+    point3: CI / CD pipelines
+    point4: Development of the core product infrastructure using Flask / Python and AWS Lambda

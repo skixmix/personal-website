@@ -1,6 +1,6 @@
 ---
-layout: about
-title: About
+layout: portfolio
+title: Portfolio
 ---
 
 This is my blog about my personal journey in learning programming & web
