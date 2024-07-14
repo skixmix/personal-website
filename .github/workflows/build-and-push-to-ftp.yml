@@ -8,12 +8,10 @@ on:
 jobs:
   build-hugo:
     name: Build static site with Hugo
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       # https://hub.docker.com/_/golang
-      # Bookworm == Debian 12, stable as of 11/26/23
-      image: golang:1.21.4-bookworm
+      image: golang:1.23rc1-bookworm
 
     steps:
       - name: Check out repo
@@ -23,20 +21,15 @@ jobs:
           # https://stackoverflow.com/questions/72978485/git-submodule-update-failed-with-fatal-detected-dubious-ownership-in-repositor
           set-safe-directory: true
 
-      - name: Build hugo
-        shell: bash -exo pipefail {0}
-        working-directory: ./third_party/hugo
-        run: |
-          git config --global --add safe.directory '*'
-          go build .
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.128.2"
+          extended: true
 
-      - name: Build site
-        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#custom-shell
-        shell: bash -exo pipefail {0}
+      - name: Build Site
+        run: hugo --minify
         working-directory: ./website
-        run: |
-          git config --global --add safe.directory '*'
-          ../third_party/hugo/hugo
 
       - name: 📂 Sync files on FTP
         # https://github.com/marketplace/actions/ftp-deploy
