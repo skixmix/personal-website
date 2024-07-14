@@ -9,9 +9,6 @@ jobs:
   build-hugo:
     name: Build static site with Hugo
     runs-on: ubuntu-22.04
-    container:
-      # https://hub.docker.com/_/golang
-      image: golang:1.23rc1-bookworm
 
     steps:
       - name: Check out repo
@@ -28,7 +25,9 @@ jobs:
           extended: true
 
       - name: Build Site
-        run: hugo --minify
+        run: |
+          git config --global --add safe.directory '*'
+          hugo --minify
         working-directory: ./website
 
       - name: 📂 Sync files on FTP
