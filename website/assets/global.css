@@ -146,11 +146,6 @@ hr {
   text-decoration:none;
   display: inline;
   position: static;
-  text-decoration: inherit;
-}
-
-.social-icons a::after {
-  display: none;
 }
 
 .social-icons a i{
@@ -175,4 +170,12 @@ hr {
   -moz-transform: scale(1.1);
   transition: all 200ms ease-in;
   transform: scale(1.1);
+}
+
+.no-underline {
+  text-decoration: inherit;
+}
+
+.no-underline:after {
+  display: none;
 }

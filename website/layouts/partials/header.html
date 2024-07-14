@@ -1,0 +1,26 @@
+<div style="display: inline-block">
+  <em class="base16-0A">Hi, I'm Simone Tavoletta</em>
+  <div>Senior Software Engineer</div>
+</div>
+
+<div style="float: right; text-align: right;">
+  <div>
+    {{ $personalEmail := "s.tavoletta@filmsimili.it" }}
+    <a href="mailto:{{ $personalEmail }}">{{ $personalEmail }}</a>
+  </div>
+  <div class="social-icons">
+    {{ range $socialIndex, $socialValue := . }}
+      <a
+        class="no-underline"
+        href="{{ $socialValue.url }}"
+        target="_blank"
+        title="{{ $socialValue.name }}">
+        <i class="fa {{ $socialValue.faKey }}" aria-hidden="true"></i>
+      </a>
+    {{ end }}
+  </div>
+</div>
+
+<span style="clear: both; display: table;"></span>
+
+<hr />

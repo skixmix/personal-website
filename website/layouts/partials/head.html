@@ -3,7 +3,14 @@
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>{{ .Title }}</title>
+  {{ $pageTitle := .Title }}
+  {{ if eq $pageTitle .Site.Title }}
+    <title>{{ $pageTitle }}</title>
+  {{ else }}
+    <title>{{ $pageTitle }} | {{ .Site.Title }}</title>
+  {{ end }}
+
+
   <!-- static files will be served relative to site root -->
   {{ with resources.Get "global.css" | resources.Fingerprint }}
     {{ with resources.ExecuteAsTemplate "global-style.css" $ . }}

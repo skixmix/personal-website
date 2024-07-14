@@ -1,0 +1,10 @@
+- title: ENWT Games
+  type: mobile apps & games
+  description: |
+    I created multiple mobile apps and games for Android that were available on the Play Store (some of them maybe still are). 
+    The apps were crafted with Flutter (Dart) and the games with Unity (C#). My store name, ENWT, stands for 
+    "Every Name Was Taken" because, well, every name I thought of during registration was already taken.
+  image: images/mobile-apps.webp
+  keypoints:
+    point1: Games developed using Unity and C#
+    point2: Apps developed using Flutter and Dart

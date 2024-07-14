@@ -1,0 +1,10 @@
+- title: Alexa Skills
+  type: serverless
+  url: https://www.amazon.it/s?k=enwt&i=alexa-skills
+  description: |
+    During time, I developed multiple Alexa skills using serverless Node.js on AWS Lambda. 
+    These skills (kinda) enhance the functionality of Amazon's Alexa devices, making them more entertaining for users.
+  image: images/alexa-skills.webp
+  keypoints:
+    point1: Developed with Node.js
+    point2: AWS Lambda

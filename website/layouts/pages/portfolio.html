@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{ partial "header.html" .Site.Data.socials }}
+  <h1>Portfolio</h1>
+  {{ .Content }}
+
+  {{ $isFistPortfolioItem := true }}
+  {{ range $portfolioFileKey, $portfolioFileValue := .Site.Data.portfolio }}
+    {{ if $isFistPortfolioItem }}
+      {{ $isFistPortfolioItem = false }}
+    {{ else }}
+      <hr style="opacity:0.4" noshade="noshade" />
+    {{ end }}
+
+    {{ range $portfolioFileValue }}
+
+      <div class="p" style="display: inline-block;">
+        <div>
+          <em class="base16-0D">{{ .title }}</em>
+        </div>
+        <div class="base16-03">{{ .type }}</div>
+      </div>
+      {{ if .url }}
+        <div style="float: right;">
+          <a href="{{ .url }}" target="_blank">{{ .url }}</a>
+        </div>
+      {{ end }}
+      <span style="clear: both; display: table;"></span>
+      <div>
+        {{ $image := resources.GetMatch .image }}
+        {{ $resizedImage := $image.Fill "200x100" }}
+        <a
+          class="no-underline"
+          href="{{ $image.RelPermalink }}"
+          target="_blank">
+          <img
+            style="margin-bottom: 1em"
+            src="{{ $resizedImage.RelPermalink }}"
+            width="{{ $resizedImage.Width }}"
+            height="{{ $resizedImage.Height }}" />
+        </a>
+
+        <div style="text-align:justify">
+          {{ .description | safeHTML }}
+        </div>
+        <ul>
+          {{ range $keypoint_key, $keypoint_value := .keypoints }}
+            <li>{{ $keypoint_value }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+
+  {{ end }}
+{{ end }}

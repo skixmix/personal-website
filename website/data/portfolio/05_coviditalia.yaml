@@ -1,0 +1,12 @@
+- title: Mappa Regioni Covid
+  type: website
+  description: |
+    Mapparegionicovid.it was my project for tracking the Italian regional status (zone colors, Covid cases...) 
+    during the Covid pandemic. Built with PHP, Python, JavaScript, and MySQL, this site kept everyone in the loop.
+    <br>
+    Fortunately, now it's no more needed.
+  image: images/coviditalia.png
+  keypoints:
+    point1: Developed with HTML, PHP, JavaScript
+    point2: Automatically extracted data from public sources using Python
+    point3: Displayed Covid stats in an interactive chart

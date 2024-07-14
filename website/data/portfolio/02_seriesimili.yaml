@@ -1,0 +1,11 @@
+- title: SerieSimili
+  type: website
+  description: |
+    SerieSimili.it is a TV show recommendation website that operates similarly (pun intended) to FilmSimili.it, 
+    helping you discover TV shows that you'll love.
+  url: "https://seriesimili.it"
+  image: images/seriesimili.webp
+  keypoints:
+    point1: Developed with HTML, PHP, JavaScript
+    point2: Automatically extracts tv shows tags and other features utilizing Python
+    point3: Automatically recommends top tv shows to users utilizing the data stored on the MySQL database

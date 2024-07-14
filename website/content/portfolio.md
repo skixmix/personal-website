@@ -1,6 +1,7 @@
 ---
-layout: portfolio
-title: Portfolio
+title: "Portfolio"
+layout: "portfolio"
+type: "pages"
 ---
 
-Still working on it :)
+Here you can check out (almost) everything I've tinkered with in my spare time.
