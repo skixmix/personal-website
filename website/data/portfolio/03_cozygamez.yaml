@@ -1,0 +1,13 @@
+- title: CozyGamez
+  type: website & YouTube channel
+  description: |
+    CozyGamez is a YouTube channel I made to publish video listings of cozy games suggestions.
+    To make the videos, I built a custom Python script that generates the full list for me, while the actual games
+    suggestions come from my experience and other sources (no AI, it messes suggestions up). I also made a simple
+    React website to redeem giveaway codes.
+  url: "https://cozygamez.ovh"
+  image: images/cozygamez.webp
+  keypoints:
+    point1: Python script to make videos
+    point2: React website
+    point3: PHP backend with MySQL database
