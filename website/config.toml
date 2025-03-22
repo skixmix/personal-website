@@ -13,7 +13,7 @@ enableGitInfo = true
   # layouts/partials/nav.html iterates over .Site.Menus.main
   # https://gohugo.io/content-management/menus/#properties-site-configuration
   [[menu.main]]
-    name = "Portfolio"
+    name = "🧑‍💻 Portfolio"
     pageRef = "/portfolio"
     weight = 2
 

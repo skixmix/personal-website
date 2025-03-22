@@ -1,6 +1,9 @@
 {{ define "main" }}
   {{ partial "header.html" .Site.Data.socials }}
-  <h1>Experience</h1>
+  <div style="margin-bottom: 1.5rem">
+    <h1>🏠 Experience</h1>
+    🙋‍♂️ Navigate to <a href="/portfolio">Portfolio</a> for more.
+  </div>
 
   {{ $isFirstJobInList := true }}
   {{ range $jobFileKey, $jobFileValue := .Site.Data.resume }}

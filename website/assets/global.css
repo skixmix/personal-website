@@ -258,3 +258,8 @@ hr {
 .no-underline:after {
   display: none;
 }
+
+.active-page {
+  font-weight: bolder;
+  color: orange;
+}

@@ -1,6 +1,20 @@
 <div style="display: inline-block">
-  <em class="base16-0A">Hi, I'm Simone Tavoletta</em>
-  <div>Senior Software Engineer</div>
+  <div style="display: flex; gap: 0.6rem; align-items: center">
+    <!-- Profile Image -->
+    {{ $myProfileImage := resources.GetMatch "images/photo-st.webp" }}
+    {{ $resizedProfileImage := $myProfileImage.Fill "55x55" }}
+    <img
+      style="border-radius: 50%;"
+      src="{{ $resizedProfileImage.RelPermalink }}"
+      width="{{ $resizedProfileImage.Width }}"
+      height="{{ $resizedProfileImage.Height }}" />
+
+    <!-- Profile presentation -->
+    <div>
+      <em class="base16-0A">Hi, I'm Simone Tavoletta</em>
+      <div>Senior Software Engineer</div>
+    </div>
+  </div>
 </div>
 
 <div style="float: right; text-align: right;">

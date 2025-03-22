@@ -12,7 +12,7 @@
     I also contribute to backend development with Node.js and mobile app development using Flutter, focusing on 
     maintaining clean code and adhering to best practices across all platforms.
   keypoints:
-    point1: Front-end development with React
-    point2: Back-end development with Node.js
-    point4: App development with Flutter
+    point1: Front-end development with React (Typescript)
+    point2: Back-end development with Node.js and NestJS (Typescript)
+    point4: App development with Flutter (Dart)
     point3: CI / CD pipelines with GitHub Actions
