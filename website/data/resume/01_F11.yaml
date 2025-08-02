@@ -1,0 +1,10 @@
+- companyName: F11 (Factor Eleven)
+  role: Senior Backend Engineer
+  location: Lucca, Italy (Remote)
+  isOngoing: true
+  startDate: 2025-08-01
+  description: |
+    I recently joined the foundation team at F11 to contribute to their scalable systems and modern architectures on the backend side. 
+    Further details will be added as my role evolves.
+  keypoints:
+    point1: Back-end development with Node.js and NestJS (Typescript)

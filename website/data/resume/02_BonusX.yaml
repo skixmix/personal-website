@@ -1,0 +1,15 @@
+- companyName: BonusX
+  role: Senior Software Engineer
+  location: Lucca, Italy (Remote)
+  isOngoing: false
+  startDate: 2024-02-05
+  endDate: 2025-08-01
+  description: |
+    As a Senior Software Engineer at BonusX, I specialized in frontend development using React. 
+    I also contributed to backend development with Node.js and mobile app development using Flutter, focusing on 
+    maintaining clean code and adhering to best practices across all platforms.
+  keypoints:
+    point1: Front-end development with React (Typescript)
+    point2: Back-end development with Node.js and NestJS (Typescript)
+    point4: App development with Flutter (Dart)
+    point3: CI / CD pipelines with GitHub Actions

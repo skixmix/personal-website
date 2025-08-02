@@ -1,8 +1,9 @@
 {{ define "main" }}
   {{ partial "header.html" .Site.Data.socials }}
-  <div style="margin-bottom: 1.5rem">
+  <div style="margin-bottom: 3rem">
     <h1>🏠 Experience</h1>
-    🙋‍♂️ Navigate to <a href="/portfolio">Portfolio</a> for more.
+    🙋‍♂️ Navigate to <a href="/portfolio">Portfolio</a> for more info about my
+    personal projects
   </div>
 
   {{ $isFirstJobInList := true }}
@@ -11,7 +12,9 @@
     {{ if $isFirstJobInList }}
       {{ $isFirstJobInList = false }}
     {{ else }}
-      <hr style="opacity:0.4" noshade="noshade" />
+      <hr
+        style="opacity:0.4; margin-top: 2rem; margin-bottom: 2rem"
+        noshade="noshade" />
     {{ end }}
 
     {{ range $jobFileValue }}
