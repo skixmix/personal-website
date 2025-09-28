@@ -4,7 +4,18 @@
   isOngoing: true
   startDate: 2025-08-01
   description: |
-    I recently joined the foundation team at F11 to contribute to their scalable systems and modern architectures on the backend side. 
-    Further details will be added as my role evolves.
+    As a Senior Backend Engineer at Factor Eleven, I am part of the Foundation Team,
+    responsible for building and maintaining the core services on which all other teams rely.
+    My work focuses on authentication, authorization, code standardization, and shared
+    infrastructure to ensure scalability, reliability, and security across all applications.
+    While my main focus is in backend engineering, I also contribute to frontend tasks
+    when needed, supporting a full-stack approach.
   keypoints:
-    point1: Back-end development with Node.js and NestJS (Typescript)
+    point1: Back-end development with NestJS and Node.js (Typescript)
+    point2: Event-driven architecture with Apache Kafka
+    point3: Database development with Kysely and PostgreSQL
+    point4: GraphQL federation and schema design
+    point5: CI / CD pipelines with GitLab
+    point6: Code validation and standardization with Zod
+    point7: Infrastructure and orchestration with Kubernetes (K8s)
+    point8: Front-end development with React (when required)
