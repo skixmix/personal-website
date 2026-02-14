@@ -4,12 +4,10 @@
   isOngoing: true
   startDate: 2025-08-01
   description: |
-    As a Senior Backend Engineer at Factor Eleven, I am part of the Foundation Team,
-    responsible for building and maintaining the core services on which all other teams rely.
-    My work focuses on authentication, authorization, code standardization, and shared
-    infrastructure to ensure scalability, reliability, and security across all applications.
-    While my main focus is in backend engineering, I also contribute to frontend tasks
-    when needed, supporting a full-stack approach.
+    As a Senior Backend Engineer at Factor Eleven, I am part of the Ad Serving and Optimization team, 
+    responsible for the correct delivery of ads to users in the most efficient way possible.
+    Before this role, I was part of the Foundation Team, responsible for building and maintaining 
+    the core services on which all other teams rely.
   keypoints:
     point1: Back-end development with NestJS and Node.js (Typescript)
     point2: Event-driven architecture with Apache Kafka
@@ -19,3 +17,5 @@
     point6: Code validation and standardization with Zod
     point7: Infrastructure and orchestration with Kubernetes (K8s)
     point8: Front-end development with React (when required)
+    point9: Ensuring the best automatic results of campaigns running through the F11's Ad Server
+    point10: Structuring and polishing data to improve campaign optimization through Machine Learning techniques
