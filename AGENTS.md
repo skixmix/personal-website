@@ -6,37 +6,38 @@ This repository is managed by an AI agent fleet powered by [OpenCode](https://op
 
 ```
 website/
-├── config.toml          # Hugo config (PaperMod theme, menus, SEO)
-├── go.mod                # Hugo module dependencies
+├── config.toml              # Hugo config (PaperMod theme, menus, SEO)
+├── go.mod                   # Hugo module dependencies
 ├── assets/
-│   ├── css/extended.css  # Custom styles (mononoki font, Tokyo Night colors)
-│   ├── images/           # Site images (profile, project screenshots)
-│   └── main.js
+│   └── css/
+│       └── extended/
+│           └── override.css # Custom styles (Tokyo Night colors)
 ├── content/
-│   ├── _index.md         # Home page content
-│   ├── portfolio.md      # Portfolio page
-│   └── blog/             # Blog posts
-│       ├── _index.md
-│       └── example-post.md
+│   ├── _index.md            # Home page content
+│   ├── portfolio.md         # Portfolio page
+│   └── blog/                # Blog posts
+│       ├── _index.md        # Blog list page (uses layouts/_default/blog.html)
+│       └── *.md             # Individual posts
 ├── data/
-│   ├── resume/           # Work experience (YAML, ordered by filename)
-│   ├── portfolio/        # Projects (YAML, ordered by filename)
-│   └── socials.yaml      # Social links
+│   ├── resume/              # Work experience (YAML, ordered by filename)
+│   ├── portfolio/            # Projects (YAML, ordered by filename)
+│   └── socials.yaml          # Social links
 ├── layouts/
-│   ├── index.html        # Home page (CV/experience)
+│   ├── index.html            # Home page (CV/experience)
 │   ├── _default/
-│   │   ├── baseof.html
-│   │   └── single.html
+│   │   ├── blog.html         # Blog list layout with pencil icon
+│   │   └── portfolio.html    # Portfolio layout with code icon
 │   ├── partials/
 │   │   ├── footer.html
 │   │   ├── getFormattedDate.html
 │   │   ├── head.html
-│   │   ├── header.html
+│   │   ├── header.html       # PaperMod header + mobile menu
+│   │   ├── mobile-menu.html  # Reusable mobile menu component
 │   │   └── nav.html
 │   └── pages/
-│       └── portfolio.html
+│       └── portfolio.html    # Portfolio layout (legacy, prefer _default/)
 └── static/
-    └── fonts/           # Mononoki font
+    └── fonts/               # Mononoki font
 ```
 
 ## Key Decisions
@@ -52,7 +53,44 @@ website/
 
 - GitHub: [adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
 - Theme managed via Hugo modules in `go.mod`
-- Override layouts in `layouts/` for custom home, portfolio
+- Override layouts in `layouts/` for custom pages
+
+## Custom Layouts
+
+### Layout Lookup Order
+
+Hugo looks for layouts in this order for blog pages:
+
+1. `layouts/pages/blog.html`
+2. `layouts/_default/blog.html` ← used
+3. PaperMod theme default
+
+### Adding Icons to Layouts
+
+Icons use inline SVG (Feather/Lucide style) with class `section-icon`:
+
+```html
+<h1 class="section-title">
+  <svg
+    class="section-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <!-- SVG paths here -->
+  </svg>
+  Page Title
+</h1>
+```
+
+Available icons in codebase:
+
+- **Portfolio**: `<polyline points="...">` (code brackets)
+- **Blog**: `<path d="M12 20h9...">` (pencil)
 
 ## Adding Content
 
@@ -61,6 +99,24 @@ website/
 ```bash
 hugo new blog/my-post-title.md
 ```
+
+Blog post front matter:
+
+```yaml
+---
+title: "Post Title"
+description: "Brief description for the listing page"
+draft: false
+---
+```
+
+**External links**: All links pointing outside the site must use HTML (markdown attributes not supported):
+
+```html
+<a href="https://example.com" target="_blank" rel="noopener nofollow">Link text</a>
+```
+
+This opens links in a new tab without passing SEO authority.
 
 ### New Resume Entry
 
