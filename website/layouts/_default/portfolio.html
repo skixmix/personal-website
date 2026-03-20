@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+{{- /* Mobile menu toggle */ -}}
+<button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active');">
+  <span></span><span></span><span></span>
+</button>
+
+{{- /* Mobile menu overlay */ -}}
+<div class="mobile-menu-overlay" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">&times;</button>
+  <div class="mobile-menu-content">
+    <ul class="mobile-nav-menu">
+      {{- range .Site.Menus.main }}
+      <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+      {{- end }}
+    </ul>
+  </div>
+</div>
+
+<section class="portfolio-section">
+  <header class="page-header">
+    <h1 class="page-title">
+      <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      Portfolio
+    </h1>
+    {{ with .Content }}
+      <div class="page-description">{{ . }}</div>
+    {{ end }}
+  </header>
+
+  <div class="portfolio-grid">
+    {{ $isFirst := true }}
+    {{ range $portfolioFileKey, $portfolioFileValue := .Site.Data.portfolio }}
+      {{ range $portfolioFileValue }}
+        <article class="portfolio-card">
+          {{ if .image }}
+            {{ $image := resources.GetMatch .image }}
+            {{ if $image }}
+              {{ $resizedImage := $image.Fill "400x200" }}
+              <div class="portfolio-image">
+                <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener">
+                  <img src="{{ $resizedImage.Permalink }}" alt="{{ .title }}" loading="lazy" />
+                </a>
+              </div>
+            {{ end }}
+          {{ end }}
+          
+          <div class="portfolio-content">
+            <div class="portfolio-header">
+              <h2 class="portfolio-title">{{ .title }}</h2>
+              <span class="portfolio-type">{{ .type }}</span>
+            </div>
+            
+            <div class="portfolio-description">
+              {{ .description | safeHTML }}
+            </div>
+            
+            {{ if .url }}
+              <div class="portfolio-link">
+                <a href="{{ .url }}" target="_blank" rel="noopener" class="external-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  Visit {{ .title }}
+                </a>
+              </div>
+            {{ end }}
+            
+            {{ if .keypoints }}
+              <ul class="portfolio-keypoints">
+                {{ range $keypoint_key, $keypoint_value := .keypoints }}
+                  <li>{{ $keypoint_value }}</li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
