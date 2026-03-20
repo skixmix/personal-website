@@ -24,6 +24,7 @@ enableGitInfo = true
   # Date format
   DateFormat = "Jan 2006"
   defaultTheme = "dark"
+  disableThemeToggle = true
   
   # Enable emoji globally
   enableEmoji = true

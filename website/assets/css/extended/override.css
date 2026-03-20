@@ -40,6 +40,10 @@ html body {
 	line-height: 1.5;
 }
 
+html .main {
+	max-width: calc(var(--nav-width) + var(--gap) * 2);
+}
+
 * {
 	font-family: mononokiz, monospace;
 }
@@ -51,7 +55,6 @@ h4,
 h5,
 h6 {
 	color: #f7768e;
-	margin-block-end: 1em;
 }
 
 h1,
@@ -72,6 +75,30 @@ p,
 ul,
 ol {
 	margin-block-end: 1em;
+}
+
+.experience-company {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 1rem;
+}
+
+.company-name {
+	color: #e0af68;
+	display: inline;
+}
+.experience-role::before {
+	content: " => ";
+}
+
+.experience-location {
+	color: #747369;
+}
+
+.experience-dates {
+	color: #9ece6a;
 }
 
 /* Content lists - not nav menus */
@@ -130,6 +157,10 @@ a:hover::after {
 	transform-origin: bottom left;
 }
 
+a.top-link::after {
+	display: none;
+}
+
 hr {
 	margin-block-start: 1em;
 	margin-block-end: 1em;
@@ -150,6 +181,10 @@ html .home-profile {
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
+}
+
+.home-hero {
+	margin-bottom: 2.5rem;
 }
 
 html .home-profile-img {
@@ -194,43 +229,74 @@ html .mobile-menu-overlay {
 	display: none;
 }
 
+.logo {
+	margin: 0;
+}
+
+html .logo-switches,
+html #theme-toggle,
+html .theme-toggle {
+	display: none !important;
+}
+
+.nav {
+	line-height: normal;
+	padding: 1.5rem;
+}
+
+#menu {
+	margin: 0;
+}
+
 @media (max-width: 768px) {
+	#menu {
+		display: none;
+	}
+
+	html .nav {
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1.5rem;
+	}
+
 	html .hamburger {
 		display: flex;
-		position: fixed;
-		top: 1rem;
-		right: 1rem;
-		z-index: 1001;
 		background: transparent;
 		border: none;
 		cursor: pointer;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 32px;
-		height: 32px;
-		padding: 4px;
+		padding: 0;
+		margin-left: auto;
 	}
 
-	html .hamburger span {
-		display: block;
-		width: 24px;
-		height: 2px;
-		background-color: var(--primary);
-		margin: 3px 0;
-		transition: all 0.3s ease;
+	html .hamburger .hamburger-icon,
+	html .hamburger .close-icon {
+		font-size: 2.3rem;
+		color: var(--primary);
+		font-family: sans-serif;
+		line-height: 1;
 	}
 
-	html .hamburger.active span:nth-child(1) {
-		transform: rotate(45deg) translate(5px, 5px);
+	html .hamburger .hamburger-icon {
+		display: inline;
 	}
 
-	html .hamburger.active span:nth-child(2) {
-		opacity: 0;
+	html .hamburger .close-icon {
+		display: none;
 	}
 
-	html .hamburger.active span:nth-child(3) {
-		transform: rotate(-45deg) translate(5px, -5px);
+	html .hamburger.active .hamburger-icon {
+		display: none;
+	}
+
+	html .hamburger.active .close-icon {
+		display: inline;
+	}
+
+	html .logo a {
+		font-size: 1.2rem;
 	}
 
 	html .mobile-menu-overlay {

@@ -1,22 +1,5 @@
 {{ define "main" }}
 
-{{- /* Mobile menu toggle - visible on mobile */ -}}
-<button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active');">
-  <span></span><span></span><span></span>
-</button>
-
-{{- /* Mobile menu overlay */ -}}
-<div class="mobile-menu-overlay" id="mobile-menu">
-  <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">&times;</button>
-  <div class="mobile-menu-content">
-    <ul class="mobile-nav-menu">
-      {{- range .Site.Menus.main }}
-      <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-      {{- end }}
-    </ul>
-  </div>
-</div>
-
 {{ $isFirstJob := true }}
 <div class="home-hero">
   <div class="home-profile">
@@ -32,15 +15,15 @@
         <a href="mailto:s.tavoletta@filmsimili.it">s.tavoletta@filmsimili.it</a>
       </div>
     </div>
+    <div class="home-social">
+      <div class="social-icons">
+        {{- range site.Params.socialIcons }}
+        <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me" title="{{ (.title | default .name) | title }}">
+          {{ partial "svg.html" . }}
+        </a>
+        {{- end }}
+      </div>
   </div>
-  <div class="home-social">
-    <div class="social-icons">
-      {{- range site.Params.socialIcons }}
-      <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me" title="{{ (.title | default .name) | title }}">
-        {{ partial "svg.html" . }}
-      </a>
-      {{- end }}
-    </div>
   </div>
 </div>
 
@@ -61,14 +44,15 @@
       <article class="experience-item">
         <div class="experience-header">
           <div class="experience-company">
-            <h3 class="company-name">{{ .companyName }}</h3>
-            <span class="experience-role">{{ .role }}</span>
-            <span class="experience-location">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              {{ .location }}
-            </span>
-          </div>
-          <div class="experience-dates">
+            <div>
+              <h3 class="company-name">{{ .companyName }}</h3>
+              <span class="experience-role">{{ .role }}</span>
+              <div class="experience-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                {{ .location }}
+              </div>
+            </div>
+            <div class="experience-dates">
             <span class="date-range">
               {{ partial "getFormattedDate.html" .startDate }} - 
               {{ if .isOngoing }}
@@ -77,6 +61,7 @@
                 {{ partial "getFormattedDate.html" .endDate }}
               {{ end }}
             </span>
+          </div>
           </div>
         </div>
         <div class="experience-description">
