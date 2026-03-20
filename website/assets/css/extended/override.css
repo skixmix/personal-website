@@ -123,10 +123,75 @@ ol {
 	display: none;
 }
 
+.blog-title {
+	font-size: 1.2rem;
+}
+
+.blog-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 0.5rem;
+}
+
+.blog-description {
+	text-align: justify;
+	color: #747369;
+}
+
+.blog-grid {
+	margin-top: 3rem;
+}
+.blog-link {
+	float: right;
+}
+
+.post-title {
+	font-size: 1.8rem;
+}
+
+.post-description {
+	color: #b9b9b9;
+}
+
+.post-content h2 {
+	font-size: 1.5rem;
+	color: #e0af68;
+}
+
+.post-content h3 {
+	font-size: 1.1rem;
+	color: #e0af68;
+}
+
+.post-content a,
+.entry-content a {
+	text-decoration: none !important;
+	box-shadow: none !important;
+}
+
+.pagination {
+	margin-top: 4rem !important;
+	display: flex;
+	justify-content: end;
+	width: 100%;
+	gap: 0.3rem;
+}
+
+.pagination .page-item.active a {
+	background-color: #e0af68;
+}
+
+.pagination .page-item.disabled a {
+	background-color: #989898;
+}
+
 /* Content lists - not nav menus */
 .entry-content ul,
 .experience-keypoints,
-.portfolio-keypoints {
+.portfolio-keypoints,
+.pagination {
 	margin-top: 1em;
 	padding-inline-start: 1em;
 	list-style: none;

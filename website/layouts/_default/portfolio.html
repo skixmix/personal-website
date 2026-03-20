@@ -1,34 +1,4 @@
-{{ define "main" }} {{- /* Mobile menu toggle */ -}} {{ $isFirst := true }}
-<button
-	class="hamburger"
-	aria-label="Toggle menu"
-	onclick="
-		document.getElementById('mobile-menu').classList.toggle('active');
-		this.classList.toggle('active');
-	"
->
-	<span></span><span></span><span></span>
-</button>
-
-{{- /* Mobile menu overlay */ -}}
-<div class="mobile-menu-overlay" id="mobile-menu">
-	<button
-		class="mobile-menu-close"
-		onclick="
-			document.getElementById('mobile-menu').classList.remove('active');
-			document.querySelector('.hamburger').classList.remove('active');
-		"
-	>
-		&times;
-	</button>
-	<div class="mobile-menu-content">
-		<ul class="mobile-nav-menu">
-			{{- range .Site.Menus.main }}
-			<li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-			{{- end }}
-		</ul>
-	</div>
-</div>
+{{ define "main" }} {{ $isFirst := true }}
 
 <section class="portfolio-section">
 	<header class="page-header">
