@@ -1,31 +1,60 @@
 # Personal Website
 
-So, I was trying to think about a new design for my personal website [simonetavoletta.it](https://simonetavoletta.it) and stumbled upon [this one](https://www.christopherfujino.com/) while working on a Flutter app project and looking at GitHub issues in the official repo.
+Portfolio/CV + blog website built with [Hugo](https://gohugo.io/) and the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
 
-And I'm like: "I totally like this idea, let's ~~copy~~ take inspiration from that and do something similar."
+Live at [simonetavoletta.it](https://simonetavoletta.it)
 
-So yeah, here it is.
+> ⚙️ This repo is managed by my AI agent fleet powered by [OpenCode](https://opencode.ai) and [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent). See [AGENTS.md](./AGENTS.md) for more details, or if you are an AI.
 
-# How to start
+## Quick Start
 
-- First, install dependencies with
+```sh
+cd website/
+hugo server
+```
 
-  ```sh
-  npm i
-  ```
+Site runs at `localhost:1313`
 
-  This is basically needed for prettier, so we have proper auto-formatting.
+## Setup (first time only)
 
-- Ok, now you will need Hugo installed, on macOS it would be:
+```sh
+brew install hugo
+hugo
+```
 
-  ```sh
-  brew install hugo
-  ```
+Hugo modules auto-download the theme on first build.
 
-- Then, run the following command to start the website in development mode:
+## Writing Blog Posts
 
-  ```sh
-  hugo server
-  ```
+```sh
+hugo new blog/my-post-title.md
+```
 
-This will run the portfolio in Fast Render Mode at `localhost:1313`
+Edit the created file in `content/blog/`.
+
+## Editor Setup
+
+This project uses:
+
+- **EditorConfig** — base settings (indentation, charset, EOL)
+- **dprint** — JS/JSON/CSS/Markdown formatting (`brew install dprint`)
+- **Hugo extension** — `.html` template formatting
+- **Even Better TOML** — `.toml` config formatting
+- **Red Hat YAML** — YAML formatting
+
+VSCode will format on save with default settings.
+
+## Deployment
+
+Push to `trunk` branch → GitHub Actions pipeline:
+
+1. Build with Hugo (`hugo --minify`)
+2. Sync to FTP server via [FTP-Deploy-Action](https://github.com/marketplace/actions/ftp-deploy)
+
+Pipeline: [`.github/workflows/build-and-push-to-ftp.yml`](.github/workflows/build-and-push-to-ftp.yml)
+
+## Stack
+
+- [Hugo](https://gohugo.io/) — static site generator
+- [PaperMod](https://github.com/adityatelange/hugo-PaperMod) — theme
+- [Hugo Modules](https://gohugo.io/hugo-modules/) — dependency management
