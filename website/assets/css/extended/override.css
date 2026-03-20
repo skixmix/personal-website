@@ -269,6 +269,7 @@ html .theme-toggle {
 		cursor: pointer;
 		padding: 0;
 		margin-left: auto;
+		z-index: 1000;
 	}
 
 	html .hamburger .hamburger-icon,
@@ -313,43 +314,48 @@ html .theme-toggle {
 		flex-direction: column;
 	}
 
-	html .mobile-menu-overlay.active {
-		display: flex;
+	html body.menu-open,
+	html.menu-open {
+		overflow: hidden;
 	}
+}
 
-	html .mobile-menu-overlay:not(.active) {
-		display: none;
-	}
+html .mobile-menu-overlay.active {
+	display: flex;
+}
 
-	html .mobile-nav-menu {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
+html .mobile-menu-overlay:not(.active) {
+	display: none;
+}
 
-	html .mobile-nav-menu li {
-		margin: 1.5rem 0;
-		padding-left: 0;
-		text-indent: 0;
-	}
+html .mobile-nav-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
 
-	html .mobile-nav-menu a {
-		font-size: 1.5rem;
-		color: var(--primary);
-		text-decoration: none;
-	}
+html .mobile-nav-menu li {
+	margin: 1.5rem 0;
+	padding-left: 0;
+	text-indent: 0;
+}
 
-	html .mobile-menu-close {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		background: transparent;
-		border: none;
-		color: var(--primary);
-		font-size: 2rem;
-		cursor: pointer;
-	}
+html .mobile-nav-menu a {
+	font-size: 1.5rem;
+	color: var(--primary);
+	text-decoration: none;
+}
+
+html .mobile-menu-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: transparent;
+	border: none;
+	color: var(--primary);
+	font-size: 2rem;
+	cursor: pointer;
 }
 
 :root[data-theme="light"] a,

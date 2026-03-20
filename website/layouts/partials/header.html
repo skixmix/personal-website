@@ -44,7 +44,7 @@
             </div>
         </div>
         {{- /* Mobile menu toggle - next to logo */ -}}
-        <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active');">
+        <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active'); document.documentElement.classList.toggle('menu-open');">
             <span class="hamburger-icon">☰</span>
             <span class="close-icon">✕</span>
         </button>
