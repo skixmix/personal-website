@@ -1,0 +1,9 @@
+{{- $extendedCSS := resources.Get "css/extended/override.css" -}} {{- if
+$extendedCSS -}} {{- $css := $extendedCSS | resources.Minify | fingerprint -}}
+<link
+	rel="stylesheet"
+	href="{{ $css.RelPermalink }}"
+	integrity="{{ $css.Data.Integrity }}"
+	crossorigin="anonymous"
+/>
+{{- end -}}

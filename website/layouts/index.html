@@ -1,54 +1,88 @@
 {{ define "main" }}
-  {{ partial "header.html" .Site.Data.socials }}
-  <div style="margin-bottom: 3rem">
-    <h1>🏠 Experience</h1>
-    🙋‍♂️ Navigate to <a href="/portfolio">Portfolio</a> for more info about my
-    personal projects
-  </div>
 
-  {{ $isFirstJobInList := true }}
-  {{ range $jobFileKey, $jobFileValue := .Site.Data.resume }}
+{{ $isFirstJob := true }}
+<div class="home-hero">
+	<div class="home-profile">
+		{{ $profileImage := resources.GetMatch "images/photo-st.webp" }}
+		{{ if $profileImage }}
+		{{ $resizedImage := $profileImage.Fill "120x120" }}
+		<img class="home-profile-img" src="{{ $resizedImage.Permalink }}" width="120" height="120" alt="Simone Tavoletta" />
+		{{ end }}
+		<div class="home-profile-info">
+			<h1 class="home-title">Simone Tavoletta</h1>
+			<p class="home-subtitle">Senior Software Engineer</p>
+			<div class="home-contact">
+				<a href="mailto:s.tavoletta@filmsimili.it">s.tavoletta@filmsimili.it</a>
+			</div>
+		</div>
+		<div class="home-social">
+			<div class="social-icons">
+				{{- range site.Params.socialIcons }}
+				<a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
+					title="{{ (.title | default .name) | title }}">
+					{{ partial "svg.html" . }}
+				</a>
+				{{- end }}
+			</div>
+		</div>
+	</div>
+</div>
 
-    {{ if $isFirstJobInList }}
-      {{ $isFirstJobInList = false }}
-    {{ else }}
-      <hr
-        style="opacity:0.4; margin-top: 2rem; margin-bottom: 2rem"
-        noshade="noshade" />
-    {{ end }}
+<section class="experience-section">
+	<h2 class="section-title">
+		<svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+			stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+			<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+		</svg>
+		Experience
+	</h2>
 
-    {{ range $jobFileValue }}
-      <div class="p" style="display: inline-block;">
-        <div>
-          <em class="base16-0D">{{ .companyName }}</em>
-          <span>&#x21D2;</span>
-          <span>{{ .role }}</span>
-        </div>
-        <div class="base16-03">{{ .location }}</div>
-      </div>
-      <div style="float: right;">
-        <div class="base16-0B">
-          {{ partial "getFormattedDate.html" .startDate }} -
-          {{ if .isOngoing }}
-            present
-          {{ else }}
-            {{ partial "getFormattedDate.html" .endDate }}
-          {{ end }}
-        </div>
-      </div>
-      <span style="clear: both; display: table;"></span>
-      <div>
-        <div style="text-align:justify">
-          {{ .description | safeHTML }}
-        </div>
-        <ul>
-          {{ range $keypoint_key, $keypoint_value := .keypoints }}
-            <li>{{ $keypoint_value }}</li>
-          {{ end }}
-        </ul>
-      </div>
-    {{ end }}
+	{{ range $jobFileKey, $jobFileValue := .Site.Data.resume }}
+	{{ range $jobFileValue }}
+	{{ if $isFirstJob }}
+	{{ $isFirstJob = false }}
+	{{ else }}
+	<hr class="section-divider" />
+	{{ end }}
 
-  {{ end }}
-
+	<article class="experience-item">
+		<div class="experience-header">
+			<div class="experience-company">
+				<div>
+					<h3 class="company-name">{{ .companyName }}</h3>
+					<span class="experience-role">{{ .role }}</span>
+					<div class="experience-location">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						{{ .location }}
+					</div>
+				</div>
+				<div class="experience-dates">
+					<span class="date-range">
+						{{ partial "getFormattedDate.html" .startDate }} -
+						{{ if .isOngoing }}
+						present
+						{{ else }}
+						{{ partial "getFormattedDate.html" .endDate }}
+						{{ end }}
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="experience-description">
+			{{ .description | safeHTML }}
+		</div>
+		<ul class="experience-keypoints">
+			{{ range $keypoint_key, $keypoint_value := .keypoints }}
+			<li>{{ $keypoint_value }}</li>
+			{{ end }}
+		</ul>
+	</article>
+	{{ end }}
+	{{ end }}
+</section>
 {{ end }}

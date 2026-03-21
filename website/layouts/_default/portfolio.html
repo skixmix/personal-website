@@ -1,0 +1,70 @@
+{{ define "main" }} {{ $isFirst := true }}
+
+<section class="portfolio-section">
+	<header class="page-header">
+		<h1 class="section-title">
+			<svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="16 18 22 12 16 6"></polyline>
+				<polyline points="8 6 2 12 8 18"></polyline>
+			</svg>
+			Portfolio
+		</h1>
+		{{ with .Content }}
+		<div class="page-description">{{ . }}</div>
+		{{ end }}
+	</header>
+
+	<div class="portfolio-grid">
+		{{ range $portfolioFileKey, $portfolioFileValue := .Site.Data.portfolio }}
+		{{ range $portfolioFileValue }} {{ if $isFirst }} {{ $isFirst = false }} {{
+		else }}
+		<hr class="section-divider" />
+		{{ end }}
+		<article class="portfolio-card">
+			<div class="portfolio-content">
+				<div class="portfolio-header">
+					<div>
+						<h2 class="portfolio-title">{{ .title }}</h2>
+						<span class="portfolio-type">{{ .type }}</span>
+					</div>
+					{{ if .url }}
+					<div class="portfolio-link">
+						<a href="{{ .url }}" target="_blank" rel="noopener" class="external-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round">
+								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+								<polyline points="15 3 21 3 21 9"></polyline>
+								<line x1="10" y1="14" x2="21" y2="3"></line>
+							</svg>
+							Visit {{ .title }}
+						</a>
+					</div>
+					{{ end }}
+				</div>
+
+				{{ if .image }} {{ $image := resources.GetMatch .image }} {{ if $image
+				}} {{ $resizedImage := $image.Fill "200x100" }}
+				<div class="portfolio-image">
+					<a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener">
+						<img src="{{ $resizedImage.Permalink }}" alt="{{ .title }}" loading="lazy" />
+					</a>
+				</div>
+				{{ end }} {{ end }}
+
+				<div class="portfolio-description">{{ .description | safeHTML }}</div>
+
+				{{ if .keypoints }}
+				<ul class="portfolio-keypoints">
+					{{ range $keypoint_key, $keypoint_value := .keypoints }}
+					<li>{{ $keypoint_value }}</li>
+					{{ end }}
+				</ul>
+				{{ end }}
+			</div>
+		</article>
+		{{ end }} {{ end }}
+	</div>
+</section>
+{{ end }}
