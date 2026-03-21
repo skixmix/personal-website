@@ -36,13 +36,7 @@ Edit the created file in `content/blog/`.
 
 This project uses:
 
-- **EditorConfig** — base settings (indentation, charset, EOL)
-- **dprint** — JS/JSON/CSS/Markdown formatting (`brew install dprint`)
-- **Hugo extension** — `.html` template formatting
-- **Even Better TOML** — `.toml` config formatting
-- **Red Hat YAML** — YAML formatting
-
-VSCode will format on save with default settings.
+- **EditorConfig** — for base formatting settings (indentation, charset, EOL)
 
 ## Deployment
 

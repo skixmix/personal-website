@@ -43,7 +43,6 @@ website/
 ## Key Decisions
 
 - **Hugo Modules** for theme management — no `themes/` folder in repo
-- **dprint** for JS/JSON/CSS/Markdown formatting — no npm
 - **EditorConfig** for base formatting settings
 - **Base16 Tokyo Night** color scheme (developer aesthetic)
 - **Mononoki** monospace font throughout
@@ -100,7 +99,7 @@ Available icons in codebase:
 hugo new blog/my-post-title.md
 ```
 
-Blog post front matter:
+Blog post front matter:  
 
 ```yaml
 ---
@@ -188,4 +187,3 @@ Configured in `config.toml`:
 | --------------- | --------------------- |
 | Hugo (extended) | Static site generator |
 | hugo-PaperMod   | Theme                 |
-| dprint          | Code formatting       |
