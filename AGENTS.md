@@ -95,6 +95,13 @@ Available icons in codebase:
 
 ### New Blog Post
 
+#### Rules
+- When the user asks you to write a new post, always ask for anything unclear before writing the post.
+- Always ask for confirmation regarding the post's title and description.
+- Keep the same meaning the user provided in the original text, don't use your own interpretation.
+- Never use the same blog post title twice. So, check old posts to see if there is something similar that already exists.
+
+
 ```bash
 hugo new blog/my-post-title.md
 ```
