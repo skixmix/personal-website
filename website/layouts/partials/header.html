@@ -1,78 +1,87 @@
 <header class="header">
-    {{- /* Mobile menu overlay - outside nav */ -}}
-    <div class="mobile-menu-overlay" id="mobile-menu">
-        <ul class="mobile-nav-menu">
-            {{- range .Site.Menus.main }}
-            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-            {{- end }}
-        </ul>
-    </div>
+	{{- /* Mobile menu overlay - outside nav */ -}}
+	<div class="mobile-menu-overlay" id="mobile-menu">
+		<ul class="mobile-nav-menu">
+			{{- range .Site.Menus.main }}
+			<li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+			{{- end }}
+		</ul>
+	</div>
 
-    <nav class="nav">
-        <div class="logo">
-            {{- $label_text := (site.Params.label.text | default site.Title) }}
-            {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
-                {{- $img := resources.Get site.Params.label.icon }}
-                {{- if $img }}
-                    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-                    {{- if hugo.IsExtended -}}
-                        {{- $processableFormats = $processableFormats | append "webp" -}}
-                    {{- end -}}
-                    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-                    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                        {{- if site.Params.label.iconHeight }}
-                            {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
-                        {{ else }}
-                            {{- $img = $img.Resize "x30" }}
-                        {{- end }}
-                    {{- end }}
-                    <img src="{{ $img.Permalink }}" alt="" aria-label="logo"
-                        height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- else }}
-                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
-                    height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- end -}}
-                {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
-                    {{ site.Params.label.iconSVG | safeHTML }}
-                {{- end -}}
-                {{- $label_text -}}
-            </a>
-            {{- end }}
-            <div class="logo-switches">
-            </div>
-        </div>
-        {{- /* Mobile menu toggle - next to logo */ -}}
-        <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active'); document.documentElement.classList.toggle('menu-open');">
-            <span class="hamburger-icon">☰</span>
-            <span class="close-icon">✕</span>
-        </button>
-        {{- $currentPage := . }}
-        <ul id="menu">
-            {{- range site.Menus.main }}
-            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-            {{- $page_url:= $currentPage.Permalink | absLangURL }}
-            {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-            <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
-                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
-                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
-                        {{- .Pre }}
-                        {{- .Name -}}
-                        {{ .Post -}}
-                    </span>
-                    {{- if (findRE "://" .URL) }}&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                    {{- end }}
-                </a>
-            </li>
-            {{- end }}
-        </ul>
-    </nav>
+	<nav class="nav">
+		<div class="logo">
+			{{- $label_text := (site.Params.label.text | default site.Title) }}
+			{{- if site.Title }}
+			<a href="{{ "" | absLangURL }}" title="{{ $label_text }}">
+				{{- if site.Params.label.icon }}
+				{{- $img := resources.Get site.Params.label.icon }}
+				{{- if $img }}
+				{{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
+				{{- if hugo.IsExtended -}}
+				{{- $processableFormats = $processableFormats | append "webp" -}}
+				{{- end -}}
+				{{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
+				{{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+				{{- if site.Params.label.iconHeight }}
+				{{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
+				{{ else }}
+				{{- $img = $img.Resize "x30" }}
+				{{- end }}
+				{{- end }}
+				<img src="{{ $img.Permalink }}" alt="" aria-label="logo"
+					height="{{- site.Params.label.iconHeight | default " 30" -}}">
+				{{- else }}
+				<img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
+					height="{{- site.Params.label.iconHeight | default " 30" -}}">
+				{{- end -}}
+				{{- else if hasPrefix site.Params.label.iconSVG "<svg" }} {{ site.Params.label.iconSVG | safeHTML }} {{-
+					end -}} {{- $label_text -}} </a>
+					{{- end }}
+					<div class="logo-switches">
+					</div>
+		</div>
+		{{- /* Mobile menu toggle - next to logo */ -}}
+		<button class="hamburger" aria-label="Toggle menu"
+			onclick="document.getElementById('mobile-menu').classList.toggle('active'); this.classList.toggle('active'); document.documentElement.classList.toggle('menu-open');">
+			<span class="hamburger-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%"
+					height="100%" viewBox="0 0 50 50">
+					<path
+						d="M 5 9 L 5 11 L 45 11 L 45 9 L 5 9 z M 5 24 L 5 26 L 45 26 L 45 24 L 5 24 z M 5 39 L 5 41 L 45 41 L 45 39 L 5 39 z">
+					</path>
+				</svg></span>
+			<span class="close-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" height="100%"
+					viewBox="0 0 50 50">
+					<path
+						d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z">
+					</path>
+				</svg></span>
+		</button>
+		{{- $currentPage := . }}
+		<ul id="menu">
+			{{- range site.Menus.main }}
+			{{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+			{{- $page_url:= $currentPage.Permalink | absLangURL }}
+			{{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
+			<li>
+				<a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)"
+					| safeHTMLAttr) ("" | safeHTMLAttr ) }}" {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" |
+					safeHTMLAttr ) }}>
+					<span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+						{{- .Pre }}
+						{{- .Name -}}
+						{{ .Post -}}
+					</span>
+					{{- if (findRE "://" .URL) }}&nbsp;
+					<svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+						<path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+						<path d="M15 3h6v6"></path>
+						<path d="M10 14L21 3"></path>
+					</svg>
+					{{- end }}
+				</a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
 </header>
