@@ -10,7 +10,7 @@
 
 	<nav class="nav">
 		<div class="logo">
-			{{- $label_text := (site.Params.label.text | default site.Title) }}
+			{{- $label_text := (cond .IsHome "Hello, World" (site.Params.label.text | default site.Title)) }}
 			{{- if site.Title }}
 			<a href="{{ "" | absLangURL }}" title="{{ $label_text }}">
 				{{- if site.Params.label.icon }}
