@@ -1,11 +1,13 @@
 ---
 title: "I Let AI Rebuild My Website (And My Career)"
 description: "From using AI as a side tool to letting it build everything — my journey through the AI-first transition and what it actually means to be a software engineer in 2026."
+cover:
+  image: "images/blog/buzz-everywhere.webp"
+  alt: "AI everywhere"
+  caption: "What do you read in this image?"
 date: 2026-03-21
 draft: false
 ---
-
-{{< img src="images/blog/buzz-everywhere.webp" width="350" height="auto" align="center" alt="AI everywhere" description="What do you read in this image?" >}}
 
 Let's be honest: nowadays, everybody says they are **AI-First**.  
 
