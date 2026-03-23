@@ -101,6 +101,23 @@ Available icons in codebase:
 - Keep the same meaning the user provided in the original text, don't use your own interpretation.
 - Never use the same blog post title twice. So, check old posts to see if there is something similar that already exists.
 
+#### Writing Style & Tone
+
+**Language:** All blog posts must be written in **English**, even if the source material or user input is in Italian or any other language.
+
+**Author Persona:** 
+- The author is a software engineer writing on his personal blog
+- He writes about anything that interests him — not just tech topics
+- Topics can range from finance to AI to random observations about life
+
+**Tone Guidelines:**
+- Conversational and casual (avoid academic or overly formal language)
+- Slightly self-deprecating and ironic when appropriate
+- Personal perspective — use "I think," "I noticed," "I had to look this up too"
+- Accessible explanations — explain complex topics simply without going too deep
+- Never pretend to be a subject matter expert; write as an observer sharing thoughts
+- Match the tone of previous posts (see `/content/blog/ai-rebuilding-website-and-career.md` for reference)
+
 
 ```bash
 hugo new blog/my-post-title.md
