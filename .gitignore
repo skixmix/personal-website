@@ -5,3 +5,7 @@ public
 resources
 
 *.swp*
+
+# AI
+.claude
+.sisyphus
