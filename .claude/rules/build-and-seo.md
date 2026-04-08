@@ -1,7 +1,6 @@
 ---
-paths:
-  - "website/**"
-  - "config.toml"
+alwaysApply: false
+paths: website/**, config.toml
 ---
 
 # Build and Deploy

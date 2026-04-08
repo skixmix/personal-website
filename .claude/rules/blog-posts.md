@@ -1,6 +1,6 @@
 ---
-paths:
-  - "content/blog/**"
+alwaysApply: false
+paths: content/blog/**
 ---
 
 # Blog Post Rules

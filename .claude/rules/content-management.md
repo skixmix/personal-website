@@ -1,6 +1,6 @@
 ---
-paths:
-  - "data/**"
+alwaysApply: false
+paths: data/**
 ---
 
 # Content Management
