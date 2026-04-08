@@ -7,5 +7,5 @@ resources
 *.swp*
 
 # AI
-.claude
+.claude/settings.local.json
 .sisyphus
