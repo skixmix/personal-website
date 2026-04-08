@@ -4,7 +4,7 @@ Portfolio/CV + blog website built with [Hugo](https://gohugo.io/) and the [Paper
 
 Live at [simonetavoletta.it](https://simonetavoletta.it)
 
-> ⚙️ This repo is managed by my AI agent fleet powered by [OpenCode](https://opencode.ai) and [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent). See [AGENTS.md](./AGENTS.md) for more details, or if you are an AI.
+> ⚙️ This repo is managed by my AI agent fleet. See [AGENTS.md](./AGENTS.md) for more details, or if you are an AI.
 
 ## Quick Start
 
