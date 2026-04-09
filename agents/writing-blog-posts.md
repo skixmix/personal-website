@@ -1,9 +1,6 @@
----
-alwaysApply: false
-paths: content/blog/**
----
-
 # Blog Post Rules
+
+The following rules apply when writing blog posts.
 
 ## Before Writing
 

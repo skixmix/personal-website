@@ -1,9 +1,6 @@
----
-alwaysApply: false
-paths: website/**, config.toml
----
+# Build and SEO
 
-# Build and Deploy
+The following rules apply when building and optimizing the website for SEO.
 
 ## Local Build
 

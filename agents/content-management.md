@@ -1,9 +1,6 @@
----
-alwaysApply: false
-paths: data/**
----
-
 # Content Management
+
+The following rules apply when managing content in the website (resume entries, blog posts, portfolio items, etc.).
 
 ## New Resume Entry
 

@@ -1,12 +1,12 @@
-# AGENTS.md
+# General Rules
 
-This project uses Claude Code as its primary AI assistant.
+- Always answer in English, regardless of the language of any provided content.
+- Always ask when something is not clear, do not assume.
+- Always prefer CLI tools over MCPs.
+- If you have any plugin that can help (Context7, LSP), use it when available.
+- Always read the docs, do not assume. If unsure about something, ask.
+- Systematically replace all em dashes ("—") with commas (",") or periods (".") to improve readability.
 
-If you are NOT Claude Code, the project rules and directives are maintained in the `.claude/` directory:
-- `.claude/CLAUDE.md` — general rules and context management
-- `.claude/rules/` — task and path-scoped rules:
-  - `blog-posts.md` — rules for writing and managing blog posts (`content/blog/`)
-  - `content-management.md` — data formats for resume and portfolio (`data/`)
-  - `build-and-seo.md` — build commands and SEO guidelines (`website/`, `config.toml`)
+# Agent Rules (STRICT)
 
-Please read the relevant files before making changes.
+You MUST read the files under `agents/` whenever they apply to the task you are working on. This applies even during planning, and before making any decision relevant to the task at hand.
