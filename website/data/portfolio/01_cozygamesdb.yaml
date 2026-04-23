@@ -1,0 +1,13 @@
+- title: CozyGamesDB
+  type: website
+  url: "https://cozygamesdb.com"
+  description: |
+      CozyGamesDB is a full-stack web application for discovering cozy games,
+      featuring a curated database maintained by my girlfriend.
+      The technical side is entirely handled by me and my AI fleet.
+  image: images/cgdb.webp
+  keypoints:
+    point1: React 19, React Router 7, TypeScript, and TailwindCSS
+    point2: Deployed on Cloudflare Workers
+    point3: High-performance and SEO-oriented
+    point4: 99% coded by AI, 100% orchestrated by me

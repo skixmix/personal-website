@@ -1,9 +1,9 @@
 - title: SerieSimili
   type: website
   description: |
-    SerieSimili.it is a TV show recommendation website that operates similarly (pun intended) to FilmSimili.it, 
-    helping you discover TV shows that you'll love.
-  url: "https://seriesimili.it"
+    SerieSimili.it was a TV show recommendation website, operating similarly (pun intended) to FilmSimili.it.
+    It helped users discover new shows through automated recommendations. I shut it down in April 2026,
+    as it was no longer actively maintained and had stopped sustaining itself through ads.
   image: images/seriesimili.webp
   keypoints:
     point1: Developed with HTML, PHP, JavaScript
