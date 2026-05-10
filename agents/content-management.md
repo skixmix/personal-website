@@ -2,6 +2,18 @@
 
 The following rules apply when managing content in the website (resume entries, blog posts, portfolio items, etc.).
 
+## Markdown Linting (REQUIRED)
+
+After creating or editing any markdown file, always run:
+
+```bash
+nvm use
+npm run lint:md:fix
+npm run lint:md
+```
+
+`lint:md:fix` auto-fixes what it can. `lint:md` must exit with 0 errors before the task is complete.
+
 ## New Resume Entry
 
 Create `data/resume/XX_Something.yaml`:

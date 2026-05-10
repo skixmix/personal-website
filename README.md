@@ -32,11 +32,30 @@ hugo new blog/my-post-title.md
 
 Edit the created file in `content/blog/`.
 
+## Markdown Linting
+
+Install dependencies (Node version is pinned via `.nvmrc`):
+
+```sh
+nvm use
+npm install
+```
+
+Lint and auto-fix markdown files:
+
+```sh
+npm run lint:md:fix  # auto-fix what's possible
+npm run lint:md      # must exit with 0 errors
+```
+
+Rules are configured in `.markdownlint-cli2.jsonc`.
+
 ## Editor Setup
 
 This project uses:
 
 - **EditorConfig** — for base formatting settings (indentation, charset, EOL)
+- **markdownlint-cli2** — for markdown linting
 
 ## Deployment
 

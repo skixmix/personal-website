@@ -9,17 +9,17 @@ cover:
 draft: false
 ---
 
-I run a website on Cloudflare Workers, paid plan. I also happen to care (a lot) about performance, so I always pay attention to metrics like Worker CPU Time and D1 database reads, not just Core Web Vitals. 
+I run a website on Cloudflare Workers, paid plan. I also happen to care (a lot) about performance, so I always pay attention to metrics like Worker CPU Time and D1 database reads, not just Core Web Vitals.
 
-Using Cloudflare Workers for the website is a constraint I chose, and I like it because it forces me to think about performance at **every** level. Most months, I stay well below every threshold defined in the official documentation. 
+Using Cloudflare Workers for the website is a constraint I chose, and I like it because it forces me to think about performance at **every** level. Most months, I stay well below every threshold defined in the official documentation.
 
 So when my bill came in at $5.03 instead of $5.00 flat, I noticed. I mean, who notices three cents? I do.
 
 ## The Bug
 
-Something was off, but I didn't know what. After reading the bill, I found the culprit. I use Workers AI occasionally, a feature that uses "Neurons" as its unit of measure. 
+Something was off, but I didn't know what. After reading the bill, I found the culprit. I use Workers AI occasionally, a feature that uses "Neurons" as its unit of measure.
 
-The <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/" target="_blank" rel="noopener nofollow">official pricing docs</a> are pretty clear: 
+The <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/" target="_blank" rel="noopener nofollow">official pricing docs</a> are pretty clear:
 > "Our free allocation allows anyone to use a total of 10,000 Neurons per day at no charge."
 
 That month, I used roughly 2,800 Neurons total. In a full month. Not even close to 10,000 in a single day. I should have paid exactly $0.

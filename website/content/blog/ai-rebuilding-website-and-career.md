@@ -37,7 +37,7 @@ Well, small disclaimer here: I was *astonished* when using it with **good** AI m
 
 What makes this combination special isn't just one feature, it's the overall architecture. You're not talking to a single AI. You're working with a fleet: multiple agents, multiple sub-agents, multiple workers all coordinated to tackle whatever task you throw at them.
 
-I'll not go into the details, but I've been using it with Claude Opus 4.6, and it works like a charm. I give it a prompt, like for example "rebuild my website following this design" (please do notice the "following this design" part, it will come in handy later on in the post), and the fleet divides the work, executes in parallel, coordinates, reviews, and ships. 
+I'll not go into the details, but I've been using it with Claude Opus 4.6, and it works like a charm. I give it a prompt, like for example "rebuild my website following this design" (please do notice the "following this design" part, it will come in handy later on in the post), and the fleet divides the work, executes in parallel, coordinates, reviews, and ships.
 
 Left to my own devices, rebuilding this site would have taken me days. With the AI? A few hours.
 
@@ -79,7 +79,7 @@ I don't think I'm being dramatic when I say: in five years, the title "Software 
 
 ## This Website as a Proof of Concept
 
-Right now, AI *cannot* build a website by its own, that's been obvious for a while. Why? Because it's struggling with UI, UX, behavior and more in general, it's stuck on empty templates without a soul or idea behind them. 
+Right now, AI *cannot* build a website by its own, that's been obvious for a while. Why? Because it's struggling with UI, UX, behavior and more in general, it's stuck on empty templates without a soul or idea behind them.
 
 So, it's obvious that AI didn't do everything for me. *I* re-built this website with AI. Remember, the orchestration layer, the human brain directing the fleet. This is the real skill now.
 
@@ -97,6 +97,6 @@ Call it **AI-first** if you want. I call it the **natural** evolution of being a
 
 The industrial revolution didn't kill craftsmanship. It elevated it.
 
-Well, it also displaced a lot of workers and cost many lives. Don’t forget that. 
+Well, it also displaced a lot of workers and cost many lives. Don’t forget that.
 
 Let's see where this takes us.

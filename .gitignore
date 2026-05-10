@@ -6,6 +6,8 @@ resources
 
 *.swp*
 
+node_modules
+
 # AI
 .claude/settings.local.json
 .sisyphus

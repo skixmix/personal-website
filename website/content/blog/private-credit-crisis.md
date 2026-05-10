@@ -59,11 +59,12 @@ Did you notice that in the last days the S&P 500 has been struggling? Well, we k
 So, like I said, it might be completely unrelated to private credit. But I think it's actually not.
 
 Let me break down what I'm thinking (maybe I'm wrong):
+
 - Higher oil price means higher inflation (more or less).
 - Higher inflation means central banks keep rates elevated instead of cutting them.
-- Higher rates means the companies that borrowed through private credit funds are paying more to service that debt. 
-- More of them default. 
-- Which means more investors panic about their private credit funds. 
+- Higher rates means the companies that borrowed through private credit funds are paying more to service that debt.
+- More of them default.
+- Which means more investors panic about their private credit funds.
 - Which means more withdrawal requests.  
 
 See a pattern there?  
@@ -75,6 +76,7 @@ It's not one crisis. It's the same crisis slowly showing up in different places 
 ## The takeaway
 
 Is this **2008**? Honestly, I don't know. I guess nobody does right now. But the warning signs are there:
+
 - withdrawal freezes
 - panic redemptions
 - forced selling (possibly) cascading into public markets

@@ -17,13 +17,13 @@ There's a song from Bo Burnham that I really like. It's called <a href="https://
 
 Sorry, it was "Entertainers", not "Engineers", my bad.
 
-Anyway, in the last few weeks I've read a lot of posts and watched lots of videos from developers and software engineers all over the world, famous and not, being frustrated over AI. Frustrated, scared, dismissive. The whole spectrum. 
+Anyway, in the last few weeks I've read a lot of posts and watched lots of videos from developers and software engineers all over the world, famous and not, being frustrated over AI. Frustrated, scared, dismissive. The whole spectrum.
 
 As always in life, I've started to notice that there are mostly two sides, we could identify them with **0** and **1**. A small amount of people seems to be in the middle (**0.5**, or "on the fence", as <a href="https://open.spotify.com/track/0wMvCQWHNRG26cnglyI78M" target="_blank" rel="noopener noreferrer">Tim Minchin</a> would sing). But most of them, they just pick one side.
 
 ## 001101
 
-Think of **0** people as the ones (pun intended) that are in the first/second <a href="https://en.wikipedia.org/wiki/Five_stages_of_grief" target="_blank" rel="noopener noreferrer">stage of grief</a>: 
+Think of **0** people as the ones (pun intended) that are in the first/second <a href="https://en.wikipedia.org/wiki/Five_stages_of_grief" target="_blank" rel="noopener noreferrer">stage of grief</a>:
 
 > "AI is useless."  
 > "Opus 4.7 is stupid."  
@@ -31,11 +31,11 @@ Think of **0** people as the ones (pun intended) that are in the first/second <a
 
 These are the developers who **need** AI to fail, because if it doesn't, something uncomfortable becomes true about their craft.
 
-On the other hand, **1** people are in the third (or fourth) stage. 
+On the other hand, **1** people are in the third (or fourth) stage.
 
 > "AI will steal all our jobs."  
-> "We're all doomed."   
-> "The robots are coming."   
+> "We're all doomed."
+> "The robots are coming."
 
 And, finally, there's people like me, who have reached the last stage: **Acceptance**.
 
@@ -49,7 +49,7 @@ Manual gearboxes had the same treatment:
 > "Automatics are for lazy drivers."  
 > "You don't really know how to drive unless you drive manual."  
 
-Nowadays most cars sold globally are automatic, and a modern dual-clutch gearbox is faster than any human hand ever was. 
+Nowadays most cars sold globally are automatic, and a modern dual-clutch gearbox is faster than any human hand ever was.
 
 I could go ahead with so many more examples, but I think you got the point. In every case, the resistance was real, and the outcome was **inevitable**.
 
@@ -72,7 +72,7 @@ Most codebases out there are a maze of spaghetti, legacy systems held together w
 
 And before anyone misunderstands me, let's be super clear.
 
-> I am **not** saying or suggesting to write bad code. I have a dignity. 
+> I am **not** saying or suggesting to write bad code. I have a dignity.
 
 But **obsessing** over code beauty? Really? While your product has bugs everywhere, is not performant at all, and everyone else is shipping? That is just vanity.
 
@@ -81,12 +81,13 @@ But **obsessing** over code beauty? Really? While your product has bugs everywhe
 Here is what I think the "code is art" crowd is really afraid of: if AI can write code, then the craft they built their identity around is suddenly worth a lot less.
 
 And they are half right.
+
 - If your identity is "I write beautiful code", well then, my friend, AI is definitely your enemy.
 - If your identity is "I build things that work", AI is an awesome **gift**.
 
 Users, CEOs, people in general **do not care** if your code is pretty. What matters is that the output is correct, the product works, and everything does what it should in a reliable (and fast) way.
 
-Shocking news: **AI can produce that**. 
+Shocking news: **AI can produce that**.
 
 You know what's even more funny? AI can also read spaghetti code, understand it, and work with it just fine, without complaining.
 

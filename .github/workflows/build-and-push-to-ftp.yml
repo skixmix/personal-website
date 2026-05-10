@@ -18,6 +18,14 @@ jobs:
           # https://stackoverflow.com/questions/72978485/git-submodule-update-failed-with-fatal-detected-dubious-ownership-in-repositor
           set-safe-directory: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Lint Markdown
+        run: npm ci && npm run lint:md
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:

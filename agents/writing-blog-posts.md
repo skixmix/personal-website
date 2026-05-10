@@ -31,11 +31,13 @@ draft: false
 **Language:** All blog posts must be written in English, even if the source material or user input is in Italian or any other language.
 
 **Author Persona:**
+
 - The author is a software engineer writing on his personal blog.
 - He writes about anything that interests him, not just tech topics.
 - Topics can range from finance to AI to random observations about life.
 
 **Tone Guidelines:**
+
 - Conversational and casual. Avoid academic or overly formal language.
 - Slightly self-deprecating and ironic when appropriate.
 - Personal perspective: use "I think," "I noticed," "I had to look this up too."
@@ -44,6 +46,18 @@ draft: false
 - Match the tone of previous posts (see `content/blog/ai-rebuilding-website-and-career.md` for reference).
 - Keep in mind that the reader's attention span is small. Do not write too much text or very long sentences.
 - Be concise. Avoid unnecessary jargon and get to the point.
+
+## Markdown Linting (REQUIRED)
+
+After creating or editing any markdown file, always run:
+
+```bash
+nvm use
+npm run lint:md:fix
+npm run lint:md
+```
+
+`lint:md:fix` auto-fixes what it can. `lint:md` must exit with 0 errors before the task is complete.
 
 ## Formatting Rules
 
