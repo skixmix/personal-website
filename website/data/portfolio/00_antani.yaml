@@ -1,0 +1,14 @@
+- title: AntanI
+  type: app
+  url: "https://github.com/skixmix/AntanI"
+  description: |
+      AntanI is my personal macOS desktop app that orchestrates CLI coding
+      agents (OpenCode, Claude Code, Codex), terminals, and an embedded
+      VS Code across local projects. One window, one sidebar of projects,
+      tabbed workspaces. Built for an audience of exactly one person: me.
+  image: images/antani.webp
+  keypoints:
+    point1: Tauri v2 (Rust) + React, built for speed and performance
+    point2: Agents, terminals, and embedded VS Code as tabs, with split views
+    point3: Status dots and notifications when an agent needs input
+    point4: 100% vibe coded, dogfooded daily, maintained by texting Claude from my phone
