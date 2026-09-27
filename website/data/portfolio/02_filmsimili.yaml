@@ -3,8 +3,8 @@
   description: |
     FilmSimili.it was a movie recommendation website I developed to help users find the best similar movies to those they love. 
     Built with HTML, JavaScript, PHP and with the assistance of Python running on Airflow, the platform automatically suggested 
-    top movie matches, ensuring a seamless and enjoyable discovery experience.
-  url: "https://filmsimili.it"
+    top movie matches, ensuring a seamless and enjoyable discovery experience. I shut it down in September 2026,
+    as it was no longer actively maintained and had stopped sustaining itself through ads.
   image: images/filmsimili.webp
   keypoints:
     point1: Developed with HTML, PHP, JavaScript
