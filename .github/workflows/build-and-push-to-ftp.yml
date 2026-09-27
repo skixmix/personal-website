@@ -45,5 +45,5 @@ jobs:
           server: ${{ secrets.ftp_server }}
           username: ${{secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          local-dir: ./website/public/ # TODO check
-          server-dir: ./personal_website/
+          local-dir: ./website/public/
+          server-dir: ./
