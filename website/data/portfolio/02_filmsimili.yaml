@@ -1,8 +1,8 @@
 - title: FilmSimili
   type: website
   description: |
-    FilmSimili.it is a movie recommendation website I developed to help users find the best similar movies to those they love. 
-    Built with HTML, JavaScript, PHP and with the assistance of Python running on Airflow, the platform automatically suggests 
+    FilmSimili.it was a movie recommendation website I developed to help users find the best similar movies to those they love. 
+    Built with HTML, JavaScript, PHP and with the assistance of Python running on Airflow, the platform automatically suggested 
     top movie matches, ensuring a seamless and enjoyable discovery experience.
   url: "https://filmsimili.it"
   image: images/filmsimili.webp
