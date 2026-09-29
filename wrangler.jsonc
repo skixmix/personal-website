@@ -1,0 +1,13 @@
+{
+  "name": "simonetavoletta",
+  "compatibility_date": "2026-09-29",
+  // Assets-only on purpose: no "main" script keeps every request free and off the Worker invocation/CPU meters.
+  "assets": {
+    "directory": "./website/public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "simonetavoletta.it", "custom_domain": true },
+    { "pattern": "www.simonetavoletta.it", "custom_domain": true }
+  ]
+}

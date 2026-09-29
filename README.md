@@ -59,12 +59,12 @@ This project uses:
 
 ## Deployment
 
-Push to `trunk` branch → GitHub Actions pipeline:
+Push to `trunk` → Cloudflare Workers Builds (Git integration, configured in the Cloudflare dashboard):
 
-1. Build with Hugo (`hugo --minify`)
-2. Sync to FTP server via [FTP-Deploy-Action](https://github.com/marketplace/actions/ftp-deploy)
+1. Build command: `npm ci && npm run lint:md && cd website && hugo --minify`
+2. Deploy command: `npx wrangler deploy`, which serves `website/public/` as static assets (config: [`wrangler.jsonc`](wrangler.jsonc))
 
-Pipeline: [`.github/workflows/build-and-push-to-ftp.yml`](.github/workflows/build-and-push-to-ftp.yml)
+Build variables: `HUGO_VERSION=0.148.2`, `GO_VERSION=1.26.1`.
 
 ## Stack
 
