@@ -1,0 +1,9 @@
+# Only /assets/ is fingerprinted by Hugo (hash in filename), so only it can be immutable.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800
+
+/fonts/*
+  Cache-Control: public, max-age=604800
