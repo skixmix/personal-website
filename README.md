@@ -64,7 +64,7 @@ Push to `trunk` → Cloudflare Workers Builds (Git integration, configured in th
 1. Build command: `npm ci && npm run lint:md && cd website && hugo --minify`
 2. Deploy command: `npx wrangler deploy`, which serves `website/public/` as static assets (config: [`wrangler.jsonc`](wrangler.jsonc))
 
-Build variables: `HUGO_VERSION=0.148.2`, `GO_VERSION=1.26.1`.
+Build variables: `HUGO_VERSION=extended_0.148.2` (the `extended_` prefix is required for WebP image processing), `GO_VERSION=1.26.1`. Hugo and Go have no version-file option in Workers Builds, so these live only in the dashboard.
 
 ## Stack
 
