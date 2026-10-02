@@ -1,12 +1,14 @@
 - title: FilmSimili
   type: website
+  url: "https://filmsimili.it"
   description: |
-    FilmSimili.it was a movie recommendation website I developed to help users find the best similar movies to those they love. 
-    Built with HTML, JavaScript, PHP and with the assistance of Python running on Airflow, the platform automatically suggested 
-    top movie matches, ensuring a seamless and enjoyable discovery experience. I shut it down in September 2026,
-    as it was no longer actively maintained and had stopped sustaining itself through ads.
-  image: images/filmsimili.webp
+    FilmSimili.it finds movies similar to one you loved: pick a title, answer three quick questions,
+    get one pick plus a few alternatives. I ran the original PHP version from 2017 until September 2026,
+    when I shut it down and rebuilt it from scratch as a lightweight static site, in Italian and English.
+  image: images/filmsimili-2026.webp
   keypoints:
-    point1: Developed with HTML, PHP, JavaScript
-    point2: Automatically extracts movie tags and other features utilizing Python
-    point3: Automatically recommends top movies to users utilizing the data stored on the MySQL database
+    point1: Plain HTML, CSS and vanilla JavaScript, no build step and no backend
+    point2: Similarity computed in the browser from TMDb data (keywords, director, recommendations, genres, mood)
+    point3: Deployed on Cloudflare Workers as static assets, so it is free to run
+    point4: SEO and Core Web Vitals first, with two mascots, Pop and Corn
+    point5: 99% coded by AI, 100% orchestrated by me
